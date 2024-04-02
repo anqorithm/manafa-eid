@@ -34,17 +34,7 @@ function App() {
     const ctx = canvas.getContext('2d');
     const image = new Image();
     console.log(i18n.language)
-    image.src = 'src/assets/empty-card.png';
-    console.log(image.width, image.src)
-
-    if (document.fonts) {
-      document.fonts.load('NeuePlak').then(function () {
-        console.log('Font loaded')
-      });
-    } else {
-      console.log('Font Loading API is not available')
-    }
-
+    image.src = 'public/assets/empty-card.png';
     image.onload = () => {
       canvas.width = image.width;
       canvas.height = image.height;
