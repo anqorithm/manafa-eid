@@ -34,7 +34,7 @@ function App() {
     const ctx = canvas.getContext('2d');
     const image = new Image();
     console.log(i18n.language)
-    image.src = 'src/assets/empty-card.png';
+    image.src = 'src/assets/empty-card-CZooAyTR.png';
     console.log(image.width, image.src)
 
 
