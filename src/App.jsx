@@ -57,7 +57,7 @@ function App() {
       let data = {
         text: text,
         language: i18n.language,
-        created_at: new Date().toDateString(),
+        generation_date: new Date().toDateString(),
       };
       saveData('generated_cards', data);
     };
