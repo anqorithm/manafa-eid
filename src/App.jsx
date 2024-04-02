@@ -4,6 +4,7 @@ import img from '../public/static/empty-card.png';
 import logo from '../public/static/manafa-white-logo.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { supabase } from './SupabaseClient.jsx';
 
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
     const ctx = canvas.getContext('2d');
     const image = new Image();
     console.log(i18n.language)
-    image.src = 'assets/empty-card-CZooAyTR.png';
+    image.src = 'public/static/empty-card.png';
     image.onload = () => {
       canvas.width = image.width;
       canvas.height = image.height;
@@ -49,15 +50,34 @@ function App() {
       const base64image = canvas.toDataURL("image/png");
       const anchor = document.createElement('a');
       anchor.href = base64image;
-      anchor.download = 'eid-card.png';
+      anchor.download = `manafa-eid-${kebabCase(text)}-${Date.now()}.png`;
       anchor.click();
       anchor.remove();
       notify();
+      let data = {
+        text: text,
+        language: i18n.language,
+        created_at: new Date().toDateString(),
+      };
+      saveData('generated_cards', data);
     };
     image.onerror = (error) => {
       console.error("Error loading image", error);
     };
   }
+
+  async function saveData(tableName, data) {
+    const { error } = await supabase
+      .from(tableName)
+      .insert(data);
+    if (error) throw new Error(error.message);
+  }
+
+
+  const kebabCase = string => string
+    .replace(/([a-z])([A-Z])/g, "$1-$2")
+    .replace(/[\s_]+/g, '-')
+    .toLowerCase();
 
 
   const isRtl = i18n.language === 'ar';
