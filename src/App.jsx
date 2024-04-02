@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import img from './assets/empty-card.png';
-import logo from './assets/manafa-white-logo.svg';
+import img from '../public/assets/empty-card.png';
+import logo from '../public/assets/manafa-white-logo.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
