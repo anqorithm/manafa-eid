@@ -10,8 +10,8 @@
 }
 
 @font-face {
-  font-family: 'Neue Plak';
-  src: local('Neue Plak'), url('./assets/fonts/NeuePlak-Bold.ttf') format('truetype');
+  font-family: 'NeuePlak';
+  src: local('NeuePlak'), url('./assets/fonts/NeuePlak-Bold.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
