@@ -54,6 +54,8 @@ function App() {
       anchor.click();
       anchor.remove();
       notify();
+      const timeElapsed = Date.now();
+      const today = new Date(timeElapsed);
       let data = {
         text: text,
         language: i18n.language,
