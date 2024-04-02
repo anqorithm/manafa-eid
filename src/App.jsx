@@ -54,12 +54,10 @@ function App() {
       anchor.click();
       anchor.remove();
       notify();
-      const timeElapsed = Date.now();
-      const today = new Date(timeElapsed);
       let data = {
         text: text,
         language: i18n.language,
-        generation_date: today.toUTCString(),
+        generation_date: getKsaTime().toUTCString(),
       };
       saveData('generated_cards', data);
     };
@@ -80,6 +78,13 @@ function App() {
     .replace(/([a-z])([A-Z])/g, "$1-$2")
     .replace(/[\s_]+/g, '-')
     .toLowerCase();
+
+  function getKsaTime() {
+    const now = new Date();
+    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const ksaTime = new Date(utc + (3600000 * 3)); // UTC + 3 hours for KSA
+    return ksaTime;
+  }
 
 
   const isRtl = i18n.language === 'ar';
