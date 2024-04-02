@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import img from '../public/assets/empty-card.png';
-import logo from '../public/assets/manafa-white-logo.svg';
+import img from '../public/static/empty-card.png';
+import logo from '../public/static/manafa-white-logo.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -34,7 +34,7 @@ function App() {
     const ctx = canvas.getContext('2d');
     const image = new Image();
     console.log(i18n.language)
-    image.src = 'public/assets/empty-card.png';
+    image.src = 'public/static/empty-card.png';
     image.onload = () => {
       canvas.width = image.width;
       canvas.height = image.height;

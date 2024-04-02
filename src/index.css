@@ -4,14 +4,14 @@
 
 @font-face {
   font-family: 'Cairo';
-  src: local('Cairo'), url('../public/assets/fonts/Cairo-Bold.ttf') format('truetype');
+  src: local('Cairo'), url('../public/static/fonts/Cairo-Bold.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'NeuePlak';
-  src: local('NeuePlak'), url('../public/assets/fonts/NeuePlak-Bold.ttf') format('truetype');
+  src: local('NeuePlak'), url('../public/static/fonts/NeuePlak-Bold.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
