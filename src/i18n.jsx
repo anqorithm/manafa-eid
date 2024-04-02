@@ -17,7 +17,8 @@ i18n
             },
         },
         supportedLngs: ['en', 'ar'],
-        fallbackLng: 'en',
+        fallbackLng: 'ar',
+        lng: 'ar',
         detection: {
             order: ['cookie', 'htmlTag', 'localStorage', 'path', 'subdomain'],
             caches: ['cookie'],
