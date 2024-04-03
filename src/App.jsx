@@ -34,7 +34,6 @@ function App() {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     const image = new Image();
-    console.log(i18n.language)
     image.src = 'assets/empty-card-CZooAyTR.png';
     image.onload = () => {
       canvas.width = image.width;
@@ -43,7 +42,6 @@ function App() {
       ctx.font = i18n.language === 'ar' ? '120px Cairo' : '120px NeuePlak';
       ctx.textAlign = 'center';
       ctx.fillStyle = 'black';
-      console.log(ctx.font)
       const x = canvas.width / 2;
       const y = canvas.height - 500;
       ctx.fillText(text, x, y);
