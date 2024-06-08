@@ -4,8 +4,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { supabase } from './SupabaseClient.jsx';
 
-const img = '/static/empty-card.png';
-const logo = '/static/manafa-black-logo.png';
+const imgSrc = '/static/empty-card.png';
+const logoSrc = '/static/manafa-black-logo.png';
 
 function App() {
   const [text, setText] = useState("");
@@ -33,7 +33,7 @@ function App() {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     const image = new Image();
-    image.src = `${window.location.origin}${img}`;
+    image.src = imgSrc;
     image.onload = () => {
       canvas.width = image.width;
       canvas.height = image.height;
@@ -90,7 +90,7 @@ function App() {
     <div dir={direction} className={`flex flex-col min-h-screen bg-my-image ${fontClass}`}>
       <div className="pt-8 flex-grow">
         <div className="flex justify-center items-center w-full">
-          <img src={`${window.location.origin}${logo}`} alt={t('Eid card background')} className="w-48 h-24 object-contain rounded-md" />
+          <img src={logoSrc} alt={t('Eid card background')} className="w-48 h-24 object-contain rounded-md" />
         </div>
         <div className="text-black text-sm flex space-x-2 justify-center mt-2 mb-8" dir="ltr">
           <span
@@ -113,7 +113,7 @@ function App() {
         <div className="flex justify-center items-center">
           <div className="bg-white p-2 shadow-lg rounded-lg max-w-sm w-full">
             <div className="relative" id="image-download">
-              <img src={`${window.location.origin}${img}`} alt={t('Eid card background')} className="object-cover rounded-md" />
+              <img src={imgSrc} alt={t('Eid card background')} className="object-cover rounded-md" />
               <h1 className={`absolute bottom-[3.3rem] left-0 right-0 text-center font-medium mx-7 text-white`}>{text}</h1>
             </div>
             <div className="mt-4">
