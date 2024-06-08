@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import img from '../public/static/empty-card.png';
-import logo from '../public/static/manafa-white-logo.svg';
+import logo from '../public/static/manafa-black-logo.png';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { supabase } from './SupabaseClient.jsx';
@@ -34,16 +34,16 @@ function App() {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     const image = new Image();
-    image.src = 'assets/empty-card-CZooAyTR.png';
+    image.src = 'public/static/empty-card.png';
     image.onload = () => {
       canvas.width = image.width;
       canvas.height = image.height;
       ctx.drawImage(image, 0, 0);
-      ctx.font = i18n.language === 'ar' ? '120px Cairo' : '120px NeuePlak';
+      ctx.font = i18n.language === 'ar' ? '45px Cairo' : '45px NeuePlak';
       ctx.textAlign = 'center';
-      ctx.fillStyle = 'black';
+      ctx.fillStyle = 'white';
       const x = canvas.width / 2;
-      const y = canvas.height - 500;
+      const y = canvas.height - 175;
       ctx.fillText(text, x, y);
       const base64image = canvas.toDataURL("image/png");
       const anchor = document.createElement('a');
@@ -90,12 +90,12 @@ function App() {
   const direction = isRtl ? 'rtl' : 'ltr';
 
   return (
-    <div dir={direction} className={`flex flex-col min-h-screen bg-dark-blue-gradient ${fontClass}`}>
+    <div dir={direction} className={`flex flex-col min-h-screen bg-my-image ${fontClass}`}>
       <div className="pt-8 flex-grow">
         <div className="flex justify-center items-center w-full">
-          <img src={logo} alt={t('Eid card background')} className="w-48 h-48 object-contain rounded-md" />
+          <img src={logo} alt={t('Eid card background')} className="w-48 h-24 object-contain rounded-md" />
         </div>
-        <div className="text-white text-sm flex space-x-2 justify-center mt-2 mb-8" dir="ltr">
+        <div className="text-black text-sm flex space-x-2 justify-center mt-2 mb-8" dir="ltr">
           <span
             onClick={() => switchLanguage('en')}
             className={`cursor-pointer pt-0.5 font-bold font-neueplak hover:opacity-75 ${i18n.language === 'en' ? 'underline' : ''
@@ -112,12 +112,12 @@ function App() {
             العربية
           </span>
         </div>
-        <p className={`text-xl text-white text-center mb-8 max-w-md mx-auto`}>{t('message')}</p>
+        <p className={`text-xl text-black text-center mb-8 max-w-md mx-auto`}>{t('message')}</p>
         <div className="flex justify-center items-center">
           <div className="bg-white p-2 shadow-lg rounded-lg max-w-sm w-full">
             <div className="relative" id="image-download">
               <img src={img} alt={t('Eid card background')} className="object-cover rounded-md" />
-              <h1 className={`absolute bottom-[5rem] left-0 right-0 text-center text-xl font-medium mx-8`}>{text}</h1>
+              <h1 className={`absolute bottom-[3.3rem] left-0 right-0 text-center font-medium mx-7 text-white`}>{text}</h1>
             </div>
             <div className="mt-4">
               <input
