@@ -38,9 +38,9 @@ function App() {
       canvas.width = image.width;
       canvas.height = image.height;
       ctx.drawImage(image, 0, 0);
-      ctx.font = i18n.language === 'ar' ? '45px Cairo' : '45px NeuePlak';
+      ctx.font = i18n.language === 'ar' ? '50px Cairo' : '50px NeuePlak';
       ctx.textAlign = 'center';
-      ctx.fillStyle = 'white';
+      ctx.fillStyle = 'black';
       const x = canvas.width / 2;
       const y = canvas.height - 175;
       ctx.fillText(text, x, y);
@@ -114,7 +114,7 @@ function App() {
           <div className="bg-white p-2 shadow-lg rounded-lg max-w-sm w-full">
             <div className="relative" id="image-download">
               <img src={imgSrc} alt={t('Eid card background')} className="object-cover rounded-md" />
-              <h1 className={`absolute bottom-[3.3rem] left-0 right-0 text-center font-medium mx-7 text-white`}>{text}</h1>
+              <h1 className={`absolute bottom-[3rem] left-0 right-0 text-center font-medium mx-7 text-black text-[20px]`}>{text}</h1>
             </div>
             <div className="mt-4">
               <input
